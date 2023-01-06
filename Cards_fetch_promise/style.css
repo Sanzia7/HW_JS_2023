@@ -1,0 +1,86 @@
+* {
+   margin: 0;
+   padding: 0;
+   box-sizing: border-box;
+}
+
+body {
+   background-color: rgb(214, 190, 158);
+}
+
+.add_form {
+   max-width: 500px;
+   min-width: 100px;
+   margin: 40px auto;
+   padding: 20px;
+   background-color: rgb(166, 150, 218);
+   display: flex;
+   justify-content: space-around;
+   border-radius: 8px;
+   box-shadow: 5px 4px 5px rgb(49, 27, 92);
+}
+
+.add_form input {
+   width: 65%;
+   padding: 12px;
+   border-radius: 7px;
+   border: 2px solid rgb(133, 68, 219);
+   background-color: rgb(161, 252, 249);
+   color: rgb(103, 38, 125);
+   font-size: 22px;
+}
+
+.add_form button {
+   width: 30%;
+   padding: 12px;
+   border-radius: 7px;
+   /* border: 3px solid rgb(145, 122, 192); */
+   border: none;
+   cursor: pointer;
+   background-color: rgb(221, 244, 162);
+   font-size: 22px;
+   cursor: pointer;
+   color: blueviolet;
+   font-weight: bold;
+}
+
+.add_form button:hover {
+   background-color: rgb(115, 199, 175);
+   color: rgb(4, 83, 203);
+   border: none;
+   box-shadow: 4px 4px 4px rgb(3, 84, 134);
+   cursor: pointer;
+}
+
+#products {
+   color: rgb(2, 112, 112);
+   max-width: 80%;
+   margin: 50px auto;
+   padding: 20px;
+   background-color: rgb(172, 128, 106);
+   display: grid;
+   /* grid-template-columns: repeat(3, 1fr); */
+   grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+   gap: 20px;
+   border-radius: 10px;
+   box-shadow: 5px 4px 6px rgb(125, 108, 85);
+}
+
+
+
+.product {
+   border: 3px solid rgb(128, 87, 76);
+   border-radius: 20px;
+   padding: 20px;
+   margin: 20px;
+   background-color: rgb(232, 199, 178);
+   box-shadow: 4px 4px 5px rgba(72, 48, 40, 0.853);
+   font-size: 22px;
+   color: rgb(4, 117, 113);
+}
+
+.subheader {
+   font-size: 30px;
+   font-weight: 700;
+   color: rgb(1, 87, 119);
+}
