@@ -3,29 +3,29 @@
 // В нижней части страницы должен быть расчет общей суммы. 
 //Результат должен выглядеть приблизительно как на макете https://www.figma.com/file/wRonUTYoOVL3ii4meCtdzR/Untitled?node-id=1%3A2&t=5i8ANTCkEpFzMpoi-0
 
-// let products = [
-//    {
-//       id: 1,
-//       title: 'Bicycle',
-//       price: 4500,
-//       quantity: 5,
-//       amount: 5 * 4500,
-//    },
-//    {
-//       id: 2,
-//       title: 'Roller',
-//       price: 2500,
-//       quantity: 7,
-//       amount: 7 * 2500,
-//    },
-//    {
-//       id: 3,
-//       title: 'Scooter',
-//       price: 1500,
-//       quantity: 10,
-//       amount: 10 * 1500,
-//    },
-// ];
+let products = [
+   {
+      id: 1,
+      title: 'Bicycle',
+      price: 4500,
+      quantity: 5,
+      amount: 5 * 4500,
+   },
+   {
+      id: 2,
+      title: 'Roller',
+      price: 2500,
+      quantity: 7,
+      amount: 7 * 2500,
+   },
+   {
+      id: 3,
+      title: 'Scooter',
+      price: 1500,
+      quantity: 10,
+      amount: 10 * 1500,
+   },
+];
 
 function addToLocal(products) {
    localStorage.setItem('products', JSON.stringify(products))
@@ -35,7 +35,7 @@ function getFromLocal() {
    return JSON.parse(localStorage.getItem('products')) ?? [];
 }
 
-let products = getFromLocal()
+products = getFromLocal()
 
 const form = document.querySelector('.add_form');
 const productsContainer = document.querySelector('.products');
@@ -47,16 +47,15 @@ form.addEventListener('submit', (event) => {
    const title = event.target.title.value;
    const price = +event.target.price.value;
    const quantity = +event.target.quantity.value;
-   const amount = +event.target.amount.value;
-   
-   products = [...getFromLocal(), { id, title, price, quantity, amount }]
+   const total = 0;
+
+   products = [...getFromLocal(), { id, title, price, quantity, total }]
    addToLocal(products)
-   // addToLocal([...getFromLocal(), { id, title, price, quantity, amount }])
+   // addToLocal([...getFromLocal(), { id, title, price, quantity, total }])
 
    event.target.title.value = '';
    event.target.price.value = '';
    event.target.quantity.value = '';
-   event.target.amount.value = '';
 
    rerender();
 });
@@ -100,7 +99,7 @@ function rerender() {
       info.innerText = 'There are no products';
       productsContainer.append(info);
    } else {
-      getFromLocal().forEach(({ id, title, price, quantity, total}) => {
+      getFromLocal().forEach(({ id, title, price, quantity, total }) => {
          const newProduct = createProductCard(id, title, price, quantity, total);
          productsContainer.append(newProduct);
       })

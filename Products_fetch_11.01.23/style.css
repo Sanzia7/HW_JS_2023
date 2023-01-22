@@ -84,3 +84,27 @@ body {
    font-weight: 700;
    color: rgb(1, 87, 119);
 }
+
+img {
+   height: 100px;
+   width: 100px;
+   margin: 15px;
+   border: 2px solid chocolate;
+   border-radius: 10px;
+}
+
+.delete {
+   margin: 7px;
+   padding: 5px;
+   border: 1px solid salmon;
+   border-radius: 5px;
+   background-color: chocolate;
+   color: brown;
+   cursor: pointer;
+}
+
+.delete:hover {
+   background-color: rgb(166, 242, 43);
+   color: coral;
+   box-shadow: 3px 3px 3px 0 rgb(104, 91, 60);
+}
