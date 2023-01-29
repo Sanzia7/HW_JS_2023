@@ -6,6 +6,7 @@
 
 body {
    background-color: rgb(214, 190, 158);
+   margin: 40px;
 }
 
 .add_form {
